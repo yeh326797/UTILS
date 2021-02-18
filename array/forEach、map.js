@@ -67,8 +67,18 @@ var output = {
 }
 
 var newData={}
-data.forEach(function (item, index) {
-  newData[data[index].mid] = item;
+data.forEach(function (item) {
+  newData[data[item]].mid] = item;
+})
+
+console.log(newData)
+
+//forEach會打亂順序，map不會
+
+
+var newData={}
+data.map(function (item) {
+  newData[data[item]].mid] = item;
 })
 
 console.log(newData)

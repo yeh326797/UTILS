@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MorseCode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="panels">
+        <div class="panel">
+            <h3>Morse Code Translation</h3>
+            <h1>摩斯密碼翻譯器</h1>
+            <textarea id="input" rows="4" placeholder="輸入英文">MORSECODE</textarea>
+            <div class="symbol">⮁</div>
+            <textarea id="output" rows="4" placeholder="輸入密碼"></textarea>
+            <div class="buttons">
+                <div class="button" id="btnMorse">翻譯成密碼</div>
+                <div class="button" id="btnEng">翻譯回來</div>
+                <div class="button" id="btnPlay">播放</div>
+            </div>
+        </div>
+        <div class="panel yellow">
+            <h3>翻譯清單</h3>
+            <hr>
+            <ul class="translist"></ul>
+        </div>  
+    </div>
+</body>
+</html>

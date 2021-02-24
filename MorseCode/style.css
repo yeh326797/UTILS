@@ -10,14 +10,29 @@ html, body {
 }
 
 body {
-  padding: 100px;
-  box-sizing: border-box;
+  overflow: hidden;
   background-color: #292b73;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.decoration {
+  font-size: 400px;
+  line-height: 1;
+  color: white;
+  position: absolute;
+  font-weight: 900;
+  opacity: 0.1;
+  left: 0px;
 }
 
 .panels {
   display: flex;
   width: 100%;
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
 }
 
 .panel {

@@ -81,3 +81,44 @@ $("#input").keyup(function(){
     var newtext = original.toUpperCase().split(" ").join("")
     $("#input").val(newtext)
 })
+
+//播放音效
+function play(texts,nowindex){
+    var word=texts[nowindex]
+    var lasttime = 300
+    if (word == "."){
+        $("audio.short")[0].play()
+        lasttime = 300
+    }else if (word == "-"){
+        $("audio.long")[0].play()
+        lasttime = 500
+    }else{
+        lasttime = 1000
+    }
+
+    $(".playlist span").removeClass("playing")
+    $(".playlist span").eq(nowindex).addClass("playing")
+
+    if (texts.length>nowindex){
+        setTimeout(function(){
+            play(texts,nowindex+1)
+        },lasttime)
+    }else{
+        $(".playlist").html("")
+    }
+}
+
+//調音量
+$("audio.short")[0].volume = 0.1
+$("audio.long")[0].volume = 0.1
+
+//播放進度顯示
+$("#btnPlay").click(function(){
+    var texts = $("#output").val()
+
+    $(".playlist").html("")
+    for(var i=0; i<texts.length; i++){
+        $(".playlist").append("<span>"+texts[i]+"</span>")
+    }
+    play(texts,0)
+})
